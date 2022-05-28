@@ -1,21 +1,13 @@
-//Json
+var newDiv = document.createElement('div');
+var newDivText =  document.createTextNode('Hello World');
+var h1 = document.querySelector('header h1');
+var main = document.querySelector('header .main');
 
-let companies = 
-    `[
-        {
-            "name": "Big Corpo",
-            "numberOfEmployees": 10000,
-            "ceo": "Mary",
-            "rating": 3.5
 
-        },
-        {
-            "name": "Small Corpo",
-            "numberOfEmployees": 10,
-            "ceo": null,
-            "rating": 2.0
+newDiv.appendChild(newDivText);
+newDiv.className = ('Hello');
+newDiv.setAttribute = ('title', 'Hello Div');
 
-        }
+main.insertBefore(newDiv, h1);
+console.log(newDiv);
 
-    ]`
-    console.log(JSON.parse(companies));
