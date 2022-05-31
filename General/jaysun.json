@@ -1,4 +1,4 @@
-[
+{"companies": [
     {
         "name": "Company One",
         "category": "Finance",
@@ -53,4 +53,4 @@
         "start": 1981,
         "end": 1989
     }
-]
+]}

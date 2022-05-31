@@ -194,6 +194,9 @@ const companies = [
 
 const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 
+//---------
+//          These are better ways to write code.... basically.
+//---------
 //_________ForEach__________
 //----for loop----
 // for(let i=0; i<companies.length; i++){
@@ -247,3 +250,46 @@ const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 //     .map(age => age * 2);
 
 //___________Sort________________
+//----Sorting companies ascending order----
+// const sortedCompanies = companies.sort(function(c1, c2){
+//     if(c1.start > c2.start){
+//         return 1;
+//     }else{
+//         return -1;
+//     }
+// });
+//----We using turnary operator(?).{else is defined as(:)} to return 1 or -1----
+//----also a shorter way to express the above function----
+// const sortedCompanies = companies.sort((a, b) => (a.start > b.start ? 1 : -1))
+//----sorting ages----
+// const sortAges = ages.sort((a, b) => a - b);
+// console.log(sortAges);
+
+//__________Reduce________________
+//----for loop to add ages----
+// let ageSum = 0;
+// for(let i=0; i<ages.length; i++){
+//     ageSum += ages[i];
+// }
+//----using reduce----
+// const ageSum =  ages.reduce(function(total, age){
+//     return total + age;
+// }, 0);
+//----using reduce arrow function----
+// const ageSum = ages.reduce((total, age) => total + age, 0);
+//----get total years for all companies----
+// const companyYears = companies.reduce(function(total, company){
+//     return total + (company.end - company.start);
+// }, 0);
+//----get total years for all companies using arrow function----
+// const companyYears = companies.reduce((total, company) => total + (company.end - company.start), 0)
+// console.log(companyYears);
+
+//___________Combine Methods____________
+// const combine = ages
+//     .map(age => age*2)
+//     .filter(age => age >= 40)
+//     .sort((a, b) => a - b)
+//     .reduce((a, b) => a + b, 0);
+
+// console.log(combine);
