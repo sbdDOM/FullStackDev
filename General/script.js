@@ -115,22 +115,25 @@
 // }
 
 // var input = document.querySelector('input[type="text"]');
- var form = document.querySelector('form');
+//  var form = document.querySelector('form');
 // input.addEventListener('input', runEvent);
 
 // var select = document.querySelector('select');
 // select.addEventListener('change', runEvent);
 
-form.addEventListener('submit', runEvent);
+// form.addEventListener('submit', runEvent);
 
 // keyup/down/press 
 
-function runEvent(e){
-    e.preventDefault();
-    console.log('Event type: ' + e.type);
+// function runEvent(e){
+//     e.preventDefault();
+//     console.log('Event type: ' + e.type);
     
 
     // console.log(e.target.value);
-    // document.getElementById('Output').innerHTML = '<h3>' + e.target.value + '</h3>';
-}
+     // document.getElementById('Output').innerHTML = '<h3>' + e.target.value + '</h3>';
+// }
 
+const domContainer = document.querySelector('#like_button_container');
+const root = ReactDOM.createRoot(domContainer);
+root.render(e(LikeButton)); 

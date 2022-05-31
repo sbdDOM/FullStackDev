@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/css/bootstrap.css">
+    <!-- py Script -->
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
 </head>
 <body>  
         <div class="main">
@@ -31,8 +34,18 @@
             <div id="Output" style="width: auto; height: 100px; background-color: white; color:black;"></div>
              <!-- button id="buttOn"> CLick ME!</button --> 
         </div>       
-
+        <div id="like_button_container"></div>
    
     <script src="script.js"></script>
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- Load our React component. -->
+    <script src="like_button.js"></script>
+    
+
 </body>
+
 </html>
