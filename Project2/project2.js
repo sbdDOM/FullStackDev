@@ -55,24 +55,40 @@ const grocery = [
     }
 ];
 
-
+var btnAll = document.getElementById('getAll');
 var btnItem = document.getElementById('getItem');
 var btnCategory = document.getElementById('getCategory');
 var btnPrice = document.getElementById('getPrice');
 var btnSale = document.getElementById('getSale');
 
+btnAll.addEventListener('click', addAll);
 btnItem.addEventListener('click', addItem);
 btnCategory.addEventListener('click', addCategory);
 btnPrice.addEventListener('click', addPrice);
 btnSale.addEventListener('click', addSale);
 
+var grocerySummary = document.getElementById('groceryAll');
 var groceryList = document.getElementById('groceryList');
 var groceryType = document.getElementById('groceryCategory');
 var groceryCost = document.getElementById('groceryPrice');
 var groceryDiscount = document.getElementById('grocerySale');
 
 
+function addAll(e){
+    e.preventDefault();
 
+    grocery.forEach(function(groceries){
+        //Create new li element
+        var li = document.createElement('li');
+        // Add class
+        li.className = 'list-group-item';
+        //Add text node with input value
+        li.appendChild(document.createTextNode(groceries));
+        //append li to list
+        grocerySummary.appendChild(li);
+    });
+    
+}
 function addItem(e){
     e.preventDefault();
 
