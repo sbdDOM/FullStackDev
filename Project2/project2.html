@@ -14,22 +14,15 @@
             <div class="col-md-6">
                 <h1 id="header-title">Grocery List</h1>
             </div>
-            <div class="col-md-6 align-self-center">
-                <selector>
-                    <ul>
-                        <li>total</li>
-                    </ul>
-                </selector>
-            </div>
           </div>
         </div>
     </header>
     <div class="container">
         <div id="main" class="card card-body">
             <ul id="groceryAll" class="list-group">
-                <h3>Summary of your items: <button class="btn btn-warning btn-sm float-right" id="getItem">summary</button></h3>
+                
                 <br>
-                <ul>
+                <ol>
                     <li>Milk, Dairy, 30, 10%</li>
                     <li>Beans, Canned, 50, null</li>
                     <li>Bread, Bakery, 20, null</li>
@@ -39,7 +32,9 @@
                     <li>Onions, Produce, 35, null</li>
                     <li>Cheese, Dairy, 110, 40%</li>
                     <li>Simba, Snack, 100, 25%</li>
-                </ul>
+                </ol>
+                <br>
+                <h3>Summary of your items: <button class="btn btn-warning btn-sm float-right" id="getItem">summary</button></h3>
                 <br>
             </ul>
             <br>
@@ -68,26 +63,17 @@
             <br>
             <div class="row align-items-start">
                 <div class="col">
-                    <ul id="groceryList" class="list-group">
+                    <ul id="sortedPrice" class="list-group">
                         
                     </ul>
                 </div>
                 <div class="col">
-                    <ul id="groceryCategory" class="list-group">
-                        
-                    </ul>
-                </div>
-                <div class="col">
-                    <ul id="groceryPrice" class="list-group">
-                        
-                    </ul>
-                </div>
-                <div class="col">
-                    <ul id="grocerySale" class="list-group">
+                    <ul id="totalPrice" class="list-group">
                         
                     </ul>
                 </div>
             </div>
+            
         </div>
     </div>
    <span style="margin: 10rem 0;"></span>

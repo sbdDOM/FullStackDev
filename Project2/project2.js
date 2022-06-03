@@ -1,3 +1,4 @@
+//Data for grocery List
 const grocery = [
     {
         "item": "Milk",
@@ -55,84 +56,82 @@ const grocery = [
     }
 ];
 
-
+//Variables
 var btnItem = document.getElementById('getItem');
 // var btnCategory = document.getElementById('getCategory');
 // var btnPrice = document.getElementById('getPrice');
 // var btnSale = document.getElementById('getSale');
 
-
+//Button onclick function
 btnItem.addEventListener('click', addItem);
 // btnCategory.addEventListener('click', addCategory);
 // btnPrice.addEventListener('click', addPrice);
 // btnSale.addEventListener('click', addSale);
 
-
+//Variables for where to display on website
 var groceryList = document.getElementById('groceryList');
 var groceryType = document.getElementById('groceryCategory');
 var groceryCost = document.getElementById('groceryPrice');
 var groceryDiscount = document.getElementById('grocerySale');
+var priceSorted = document.getElementById('sortedPrice');
+var priceTotal = document.getElementById('totalPrice');
 
 function addItem(e){
     e.preventDefault();
-    
-    
-    //Get input value 
+ 
+    //Map out Sales per item, then displays.
     const groceryItem = grocery.map(grocery => grocery.item);
-    //Loop to display all values in array
     groceryItem.forEach(function(groceryItem){
-        //Create new li element
         var li = document.createElement('li');
-        // Add class
         li.className = 'list-group-item';
-        //Add text node with input value
         li.appendChild(document.createTextNode(groceryItem));
-        //append li to list
         groceryList.appendChild(li);
     });
-    //Get input value 
+    //Map out Category per item, then displays.
     const groceryCategory = grocery.map(grocery => grocery.category);
-    //Loop to display all values in array
     groceryCategory.forEach(function(groceryCategory){
-        //Create new li element
         var li = document.createElement('li');
-        // Add class
         li.className = 'list-group-item';
-        //Add text node with input value
         li.appendChild(document.createTextNode(groceryCategory));
-        //append li to list
         groceryType.appendChild(li);
     });
-    //Get input value 
+    //Map out Price per item, then displays.
     const groceryPrice = grocery.map(grocery => grocery.price);
-    //Loop to display all values in array
     groceryPrice.forEach(function(groceryPrice){
-        //Create new li element
         var li = document.createElement('li');
-        // Add class
         li.className = 'list-group-item';
-        //Add text node with input value
         li.appendChild(document.createTextNode(groceryPrice));
-        //append li to list
         groceryCost.appendChild(li);
     });  
-     //Get input value 
+     //Map out Sales per item, then displays.
      const grocerySale = grocery.map(grocery => grocery.sale);
-     //Loop to display all values in array
      grocerySale.forEach(function(grocerySale){
-         //Create new li element
          var li = document.createElement('li');
-         // Add class
          li.className = 'list-group-item';
-         //Add text node with input value
          li.appendChild(document.createTextNode(grocerySale));
-         //append li to list
          groceryDiscount.appendChild(li);
      });  
- 
-    const sortedPrice = groceryPrice
-        .sort((a, b) => (a < b ? 1: -1));
-    console.log(sortedPrice);
+
+     //Sort out the prices per item in acsending order
+     const sortedPrice = groceryPrice
+     .sort((a, b) => (a < b ? 1: -1));
+     console.log(sortedPrice);
+     
+     //Total Price
+    const priceSum = groceryPrice.reduce((total, groceryPrice) => total + groceryPrice, 0);
+    console.log(priceSum);
+
+     //Filter highest price
+     console.log(sortedPrice[0]);
+
+     //Calculate cost after sale
+     grocerySale.forEach(function(groceryz){
+         if(groceryz === 'null'){
+            return 0;
+         }
+         console.log(groceryz);
+     });
+     
     
 }
 
