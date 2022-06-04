@@ -135,7 +135,50 @@ function addItem(e){
     
 }
 
+const groceryCategory = grocery.map(grocery => grocery.category);
 
 
+const car = 'car';
+class GroceryList{
+    constructor(item, groceryCategory, price){
+        this.item = item;
+        this.groceryCategory = groceryCategory;
+        this.price = price;
+    }
+    getSummary(){
+        return `${this.item} is your item, ${this.category} is your category, ${this.price} is your price and ${this.sale} is your discount.`;
+    }
+    getItem(){
+        const groceryItem = grocery.map(grocery => grocery.item);
+        return groceryItem;
+    }
+    getPrice(){
+        const groceryPrice = grocery.map(grocery => grocery.price);
+        return groceryPrice;
+    }
+}
 
-    
+class Sale extends GroceryList{
+    constructor(item, category, price, sale){
+        super(item, category, price);
+        this.sale = sale;
+    }
+    getSale(){
+        return this.getItem() + ' This is your Price: ' + this.getPrice();
+    }
+}
+
+
+//Magazine sub class
+// class Magazine extends Book{
+//     constructor(title, author, year, month){
+//         super(title, author, year);
+//         this.month = month;
+//     }
+// }
+
+
+const carr = new Sale();
+console.log(carr.getSummary());
+
+
