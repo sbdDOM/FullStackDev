@@ -293,3 +293,184 @@ const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 //     .reduce((a, b) => a + b, 0);
 
 // console.log(combine);
+
+
+//--------------------
+//                      OOP in JS
+//--------------------
+
+//________Object literal_________
+// const book1 = {
+//     title: 'Book one',
+//     author: 'John Doe',
+//     year: '2013',
+//     getSummary: function (){
+//         return `${this.title} was written by ${this.author} in ${this.year}`;
+//     }
+// };
+// const book2 = {
+//     title: 'Book two',
+//     author: 'John Doe',
+//     year: '2016',
+//     getSummary: function (){
+//         return `${this.title} was written by ${this.author} in ${this.year}`;
+//     }
+// };
+//----get headings of each object----
+// console.log(Object.keys(book2));
+//----get value of each object----
+// console.log(Object.values(book2));
+
+//________________Constructors_________________
+//----Constructor----
+// function Book(title, author, year) {
+//     this.title = title;
+//     this.author = author;
+//     this.year = year;
+
+//     this.getSummary = function(){
+//         return `${this.title} was written by ${this.author} in ${this.year}`;
+//     }
+// }
+
+// const book1 = new Book('Book one', 'John doe', '2013');
+// const book2 = new Book('Book two', 'John dope', '2017');
+
+// console.log(book2);
+
+//______________Prototypes__________________
+//----Constructor----
+// function Book(title, author, year) {
+//     this.title = title;
+//     this.author = author;
+//     this.year = year;
+// }
+
+//----getSummary---- 
+//----Because we dont want getsummaru in object thats why we use prototype----
+// Book.prototype.getSummary = function(){
+//     return `${this.title} was written by ${this.author} in ${this.year}`;
+// }
+// Book.prototype.getAge = function(){
+//     const years = new Date().getFullYear() - this.year;
+//     return `${this.title} is years ${years} old`;
+// }
+//----Revise---- 
+// Book.prototype.revise = function(newYear){
+//     this.year = newYear;
+//     this.revised = true;
+// }
+
+// const book1 = new Book('Book one', 'John doe', '2013');
+// const book2 = new Book('Book two', 'John dope', '2017');
+
+// console.log(book2);
+// book2.revise('2018');
+// console.log(book2);
+
+//_____________Inheritance______________
+//----Constructor----
+// function Book(title, author, year) {
+//     this.title = title;
+//     this.author = author;
+//     this.year = year;
+// }
+//----getSummary---- 
+//----Because we dont want getsummaru in object thats why we use prototype----
+// Book.prototype.getSummary = function(){
+//     return `${this.title} was written by ${this.author} in ${this.year}`;
+// }
+//----Magazine Constructor
+// function Magazine(title, author, year, month){
+//     Book.call(this, title, author, year);
+//     this.month = month;
+// }
+//----Inherit Prototype----
+// Magazine.prototype = Object.create(Book.prototype);
+//----Instantiate magazine object----
+// const mag1 = new Magazine('mag one', 'Jone odpe', '2009', 'Jun');
+//----Use Magazine constructor----
+// Magazine.prototype.constructor = Magazine;
+// console.log(mag1);
+
+//____________Object Create______________
+//----Object of Protos----
+// const bookProtos = {
+//     getSummary: function(){
+//         return `${this.title} was written by ${this.author} in ${this.year}`;
+//     },
+//     getAge: function(){
+//         return `${this.title} is years ${years} old`;
+//     }
+// }
+//----Create Object----
+// const book1 = Object.create(bookProtos);
+// book1.title = 'Book One';
+// book1.author = 'Jone Joop';
+// book1.year = '2020';
+//----OR you can create and object like this----
+// const book1 = Object.create(bookProtos, {
+//     title: {value: 'Book One'}, 
+//     author: {value: 'Jope Jone'},
+//     year: {value: '2020'}
+// });
+//console.log(book1);
+//----Done with ES5----
+//----Start with ES6----
+//______________________Classes______________
+// class Book{
+//     constructor(title, author, year){
+//         this.title = title;
+//         this.author = author;
+//         this.year = year;
+//     }
+
+//     getSummary(){
+//         return `${this.title} was written by ${this.author} in ${this.year}`;
+//     }
+//     getAge(){
+//         return `${this.title} is years ${years} old`;
+//     }
+
+//     revise(newYear){
+//         this.year = newYear;
+//         this.revised = true;
+//     }
+//     static topBookStore(){
+//         return 'Barnes & Nobles';
+//     }
+// }
+//----Instantiate an object----
+//const book1 = new Book('Book one', 'Jone oop', '9009');
+
+// console.log(book1);
+// book1.revise('2090');
+// console.log(book1);
+
+//console.log(Book.topBookStore());
+
+//_____________Sub Classes___________
+// class Book{
+//     constructor(title, author, year){
+//         this.title = title;
+//         this.author = author;
+//         this.year = year;
+//     }
+
+//     getSummary(){
+//         return `${this.title} was written by ${this.author} in ${this.year}`;
+//     }
+// }
+
+//Magazine sub class
+// class Magazine extends Book{
+//     constructor(title, author, year, month){
+//         super(title, author, year);
+//         this.month = month;
+//     }
+// }
+
+//----Instantiate Magazine----
+// const mag1 = new Magazine('Mag One', 'Jope jon', '2900', 'Jap');
+// console.log(mag1.getSummary());
+
