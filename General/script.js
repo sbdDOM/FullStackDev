@@ -474,3 +474,5 @@ const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 // const mag1 = new Magazine('Mag One', 'Jope jon', '2900', 'Jap');
 // console.log(mag1.getSummary());
 
+//_______________AJAX_____________
+//Check under folder local disk/xampp/htdocs/AJAX_Crash

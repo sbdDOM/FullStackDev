@@ -1,4 +1,40 @@
-*, body{
+*{
     background-color: black;
-    color: white;
 }
+.glow {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 70px;
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 0.1 ease-in-out infinite alternate;
+    -moz-animation: glow 0.1s ease-in-out infinite alternate;
+    animation: glow 0.1s ease-in-out infinite alternate;
+  }
+  .zeroOne{
+    -webkit-animation: glow 0.2 ease-in-out infinite alternate;
+    -moz-animation: glow 0.2s ease-in-out infinite alternate;
+    animation: glow 0.2s ease-in-out infinite alternate;
+  }
+  .zeroTwo{
+    -webkit-animation: glow 0.5 ease-in-out infinite alternate;
+    -moz-animation: glow 0.5s ease-in-out infinite alternate;
+    animation: glow 0.5s ease-in-out infinite alternate;
+  }
+  .zeroThree{
+    -webkit-animation: glow 0.3 ease-in-out infinite alternate;
+    -moz-animation: glow 0.3s ease-in-out infinite alternate;
+    animation: glow 0.3s ease-in-out infinite alternate;
+  }
+  .zeroFour{
+    -webkit-animation: glow 0.4 ease-in-out infinite alternate;
+    -moz-animation: glow 0.4s ease-in-out infinite alternate;
+    animation: glow 0.4s ease-in-out infinite alternate;
+  }
+  @-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  }
